@@ -29,7 +29,6 @@ sleep 10 # wait to make sure server has initialized first
 
 namd2  +p4 namd\_input.conf > namd\_output
 </pre></code>
-* * *
 
 The custom QM features of NAMD have to be activated in the NAMD configuration file:
 <pre><code>
@@ -46,7 +45,7 @@ qmElecEmbed off
 
 The occupancy column of the qmmm.pdb specifies which atoms should be treated using the NNP.
 
-##Examples
+## Examples
 
 The examples directory of the GitHub repository contains the input files an NNP/MM simulation of erlotinib in liquid water, where erlotinib is represented using the NNP and the water molecules are calculated using the TIP3P MM model.
 
@@ -64,7 +63,6 @@ cellorigin 21.31 0.50 52.4
 </pre></code>
 
 ## Citing
-
 Researchers using this code should cite the following paper:
 
 Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, Chemical Science,2020, doi: [10.1039/C9SC06017K](https://www.google.com/url?q=https://doi.org/10.1039/C9SC06017K&sa=D&ust=1580056410572000)

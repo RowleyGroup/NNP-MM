@@ -1,6 +1,7 @@
 # Using a Neural Network Potential Embedding in a MM Model using NAMD
 
-## Shae-Lynn Lahey, Từ Nguyễn Thiên Phúc, and Christopher N. Rowley
+Shae-Lynn Lahey, Từ Nguyễn Thiên Phúc, and Christopher N. Rowley
+----------------------------------------------------------------
 
 The NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the TorchANI NNP python library.
 

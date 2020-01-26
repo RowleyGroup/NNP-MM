@@ -65,7 +65,7 @@ cellorigin 21.31 0.50 52.4
 ## Citing
 Researchers using this code should cite the following paper:
 
-Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, Chemical Science,2020, doi: [10.1039/C9SC06017K](https://www.google.com/url?q=https://doi.org/10.1039/C9SC06017K&sa=D&ust=1580056410572000)
+Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, *Chemical Science*, **2020**, doi: [10.1039/C9SC06017K](https://doi.org/10.1039/C9SC06017K)
 
 <pre><code>
 @Article{NNP\_MM\_2020,

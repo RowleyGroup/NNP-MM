@@ -1,6 +1,7 @@
 # Using a Neural Network Potential Embedding in a MM Model using NAMD
 
 *Shae-Lynn Lahey, Từ Nguyễn Thiên Phúc, and Christopher N. Rowley*
+
 [www.rowleygroup.net](https://www.rowleygroup.net)
 
 -------------------------------------------------------------------
@@ -18,18 +19,18 @@ The ani-server.py script must be executed and continue to run in the background 
 
 An example SLURM submission script for a NAMD/MM simulation
 <pre><code>
-export RUNDIR=/dev/shm/$SLURM\_JOB\_ID/
+export RUNDIR=/dev/shm/$SLURM_JOB_ID/
 mkdir $RUNDIR
 
 module load nixpkgs/16.09  intel/2016.4
 module load namd-multicore/2.13
 
 module load python/3.7.0
-python3 server.py >& server.\\$SLURM\_JOB\_ID.log&
+python3 server.py >& server.$SLURM_JOBID.log&
 
 sleep 10 # wait to make sure server has initialized first
 
-namd2  +p4 namd\_input.conf > namd\_output
+namd2  +p4 namd_input.conf > namd_output
 </pre></code>
 
 The custom QM features of NAMD have to be activated in the NAMD configuration file:

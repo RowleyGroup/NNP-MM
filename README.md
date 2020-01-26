@@ -8,8 +8,8 @@ The ani-server.py script must be executed and continue to run in the background 
 
 ## Installation
 
-1. Install [TorchANI](https://www.google.com/url?q=https://aiqm.github.io/torchani/&sa=D&ust=1580056410564000).
-2. Install [NAMD](https://www.google.com/url?q=http://www.ks.uiuc.edu/Research/namd/&sa=D&ust=1580056410564000). Version 2.13 or later is required. The single-node version (e.g., Linux-x86\_64-multicore) is fine for this because the ANI calculations will be slower than the MM component, so MPI parallelization.
+1. Install [TorchANI](https://aiqm.github.io/torchani/).
+2. Install [NAMD](http://www.ks.uiuc.edu/Research/namd/). Version 2.13 or later is required. The single-node version (e.g., Linux-x86\_64-multicore) is fine for this because the ANI calculations will be slower than the MM component, so MPI parallelization.
 3. Install client.py and server.py scripts into an accessible location.
 
 ## Execution

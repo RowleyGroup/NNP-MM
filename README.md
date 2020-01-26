@@ -1,4 +1,4 @@
-# Using a Neural Network Potential Embedding in a MM Model using NAMD
+# Using a Neural Network Potential Embedded in a MM Model using NAMD
 
 *Shae-Lynn Lahey, Từ Nguyễn Thiên Phúc, and Christopher N. Rowley*
 

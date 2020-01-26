@@ -1,18 +1,18 @@
-#Using a Neural Network Potential Embedding in a MM Model using NAMD
+# Using a Neural Network Potential Embedding in a MM Model using NAMD
 
-##Shae-Lynn Lahey, Từ Nguyễn Thiên Phúc, and Christopher N. Rowley
+## Shae-Lynn Lahey, Từ Nguyễn Thiên Phúc, and Christopher N. Rowley
 
 The NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the TorchANI NNP python library.
 
 The ani-server.py script must be executed and continue to run in the background before NAMD is executed. This server interfaces with the TorchANI library. The ani-client.py script is executed by NAMD at each energy/gradient step, which communicates with the ani-server.py. NAMD writes the atomic coordinates to disk. The ani-client.py script polls the ani-server.py. The socket communication is performed through a file handle (/tmp/ani\_socket) To reduce the rate of these file operations, we use a local RAM to store these files, although, in practice, this does not change the speed of the simulations significantly.
 
-##Installation
+## Installation
 
 1. Install [TorchANI](https://www.google.com/url?q=https://aiqm.github.io/torchani/&sa=D&ust=1580056410564000).
 2. Install [NAMD](https://www.google.com/url?q=http://www.ks.uiuc.edu/Research/namd/&sa=D&ust=1580056410564000). Version 2.13 or later is required. The single-node version (e.g., Linux-x86\_64-multicore) is fine for this because the ANI calculations will be slower than the MM component, so MPI parallelization.
 3. Install client.py and server.py scripts into an accessible location.
 
-##Execution
+## Execution
 
 An example SLURM submission script for a NAMD/MM simulation
 <pre><code>
@@ -50,7 +50,7 @@ The occupancy column of the qmmm.pdb specifies which atoms should be treated usi
 
 The examples directory of the GitHub repository contains the input files an NNP/MM simulation of erlotinib in liquid water, where erlotinib is represented using the NNP and the water molecules are calculated using the TIP3P MM model.
 
-##Practical Notes
+## Practical Notes
 
 Note that the AN-1/ANI-1ccX model should not be used for compounds with charged functional groups. Only molecules comprised of C, N, O, and H atoms are supported by the ANI-1x/ANI-1ccX.
 
@@ -63,12 +63,11 @@ cellbasisvector3 0.0 0.0 38.9952104018
 cellorigin 21.31 0.50 52.4
 </pre></code>
 
-##Citing
+## Citing
 
 Researchers using this code should cite the following paper:
 
 Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, Chemical Science,2020, doi: [10.1039/C9SC06017K](https://www.google.com/url?q=https://doi.org/10.1039/C9SC06017K&sa=D&ust=1580056410572000)
-
 
 <pre><code>
 @Article{NNP\_MM\_2020,

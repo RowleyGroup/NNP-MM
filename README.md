@@ -71,15 +71,15 @@ Researchers using this code should cite the following paper:
 Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, *Chemical Science*, **2020**, doi: [10.1039/C9SC06017K](https://doi.org/10.1039/C9SC06017K)
 
 <pre><code>
-@Article{NNP\_MM\_2020,
-author ="Lahey, Shae-Lynn J and Rowley, Christopher N.",
-title  ="Simulating Protein-Ligand Binding with Neural Network Potentials",
-journal  ="Chem. Sci.",
-year  ="2020",
+@Article{NNP_MM_2020,
+author = "Lahey, Shae-Lynn J and Rowley, Christopher N.",
+title  =" Simulating Protein-Ligand Binding with Neural Network Potentials",
+journal = "Chem. Sci.",
+year  = "2020",
 pages  ="-",
-publisher  ="The Royal Society of Chemistry",
-doi  ="10.1039/C9SC06017K",
-url  ="http://dx.doi.org/10.1039/C9SC06017K",
+publisher = "The Royal Society of Chemistry",
+doi = "10.1039/C9SC06017K",
+url = "http://dx.doi.org/10.1039/C9SC06017K",
 }
 </pre></code>
 

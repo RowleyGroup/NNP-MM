@@ -66,9 +66,15 @@ cellorigin 21.31 0.50 52.4
 </pre></code>
 
 ## Citing
-Researchers using this code should cite the following paper:
+Researchers using *this* code should cite the following paper:
 
 Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, *Chemical Science*, **2020**, doi: [10.1039/C9SC06017K](https://doi.org/10.1039/C9SC06017K)
+
+Researchers should also cite the the papers describing the NNP used:
+1. ANI-1ccX potential: Smith, J.S., Nebgen, B.T., Zubatyuk, R. et al. Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning. *Nat. Commun.*  **2019**, 10, 2903 [https://doi.org/10.1038/s41467-019-10827-4](https://doi.org/10.1038/s41467-019-10827-4)
+2. ANI-1 potential: J. S. Smith, O. Isayev, and A. E. Roitberg. ANI-1: an extensible neural net-
+work potential with DFT accuracy at force field computational cost. *Chem. Sci.*, **2017**
+8 (4), 3192–3203, [https://doi.org/10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)
 
 <pre><code>
 @Article{NNP_MM_2020,
@@ -82,9 +88,3 @@ doi = "10.1039/C9SC06017K",
 url = "http://dx.doi.org/10.1039/C9SC06017K",
 }
 </pre></code>
-
-## References
-1. ANI-1ccX potential: Smith, J.S., Nebgen, B.T., Zubatyuk, R. et al. Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning. *Nat. Commun.*  **2019**, 10, 2903 [https://doi.org/10.1038/s41467-019-10827-4](https://doi.org/10.1038/s41467-019-10827-4)
-2. ANI-1 potential: J. S. Smith, O. Isayev, and A. E. Roitberg. ANI-1: an extensible neural net-
-work potential with DFT accuracy at force field computational cost. *Chem. Sci.*, **2017**
-8 (4), 3192–3203, [https://doi.org/10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)

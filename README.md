@@ -7,7 +7,7 @@
 -------------------------------------------------------------------
 The NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the [TorchANI NNP python library](https://aiqm.github.io/torchani/) developed by the [Roitberg group](https://roitberg.chem.ufl.edu/).
 
-The ani-server.py script must be executed and continue to run in the background before NAMD is executed. This server interfaces with the TorchANI library. The ani-client.py script is executed by NAMD at each energy/gradient step, which communicates with the ani-server.py. NAMD writes the atomic coordinates to disk. The ani-client.py script polls the ani-server.py. The socket communication is performed through a file handle (/tmp/ani\_socket) To reduce the rate of these file operations, we use a local RAM to store these files, although, in practice, this does not change the speed of the simulations significantly.
+The server.py script must be executed and continue to run in the background before NAMD is executed. This server interfaces with the TorchANI library. The client.py script is executed by NAMD at each energy/gradient step, which communicates with the ani-server.py. NAMD writes the atomic coordinates to disk. The client.py script polls the server.py. The socket communication is performed through a file handle (/tmp/ani_socket) To reduce the rate of these file operations, we use a local RAM to store these files, although, in practice, this does not change the speed of the simulations significantly.
 
 ## Installation
 

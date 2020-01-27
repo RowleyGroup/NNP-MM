@@ -58,7 +58,7 @@ The examples directory of the GitHub repository contains the input files an NNP/
 ### Applicable Systems
 The ANI-1x/ANI-1ccX model should not be used for compounds with charged functional groups. Only molecules comprised of C, N, O, and H atoms are supported by the ANI-1x/ANI-1ccX models.
 ### Periodic Boundary Conditions
-The atoms in the NNP region must not cross the boundary of the simulation cell. The simplest way to do this is to translate the NNP system to the origin (0, 0, 0). Alternatively, the CellOrigin NAMD keyword can be used to place the center of the simulation cell at the center of mass of the NNP region. In each case, it is advisable to restrain the NNP atoms with a harmonic potential so that they do not diffusion across the boundary during the simulation.
+The atoms in the NNP region must not cross the boundary of the simulation cell. The simplest way to do this is to translate the NNP system to the origin (0, 0, 0). Alternatively, the CellOrigin NAMD keyword can be used to place the center of the simulation cell at the center of mass of the NNP region. In each case, it is advisable to restrain the NNP atoms with a harmonic potential so that they do not diffuse across the boundary during the simulation.
 
 <pre><code>
 cellbasisvector1 39.4435539101   0.0  0.0

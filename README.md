@@ -7,7 +7,9 @@
 -------------------------------------------------------------------
 NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the [TorchANI NNP python library](https://aiqm.github.io/torchani/) developed by the [Roitberg](https://roitberg.chem.ufl.edu/) and [Isayev](http://olexandrisayev.com/) groups.
 
-The server.py script must be executed and continue to run in the background before NAMD is executed. This server interfaces with the TorchANI library. The client.py script is executed by NAMD at each energy/gradient step, which communicates with the server.py. NAMD writes the atomic coordinates to disk. The client.py script polls the server.py. The socket communication is performed through a file handle (/tmp/ani_socket) To reduce the rate of these file operations, we use a local RAM to store these files, although, in practice, this does not change the speed of the simulations significantly.
+The server.py script must be executed and continue to run in the background before NAMD is executed. This server interfaces with the TorchANI library. The client.py script is executed by NAMD at each energy/gradient step, which communicates with the server.py. NAMD writes the atomic coordinates to disk. The client.py script polls the server.py. The socket communication is performed through a file handle (/tmp/ani_socket). 
+
+The transfer of data (i.e., coordinates from NAMD to TorchANI and energies/forces from TorchANI to NAMD) uses temporary files written to the file system. To reduce the rate of these file operations, we use a local RAM to store these files, although, in practice, this does not change the speed of the simulations significantly.
 
 ## Installation
 
@@ -75,6 +77,8 @@ Researchers should also cite the papers describing the NNP used:
 2. ANI-1 potential: J. S. Smith, O. Isayev, and A. E. Roitberg. ANI-1: an extensible neural net-
 work potential with DFT accuracy at force field computational cost. *Chem. Sci.*, **2017**
 8 (4), 3192–3203, [https://doi.org/10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)
+3. Justin S. Smith, Adrian E. Roitberg, and Olexandr Isayev *ACS Medicinal Chemistry Letters* **2018** 9 (11), 1065-1069
+[DOI: 10.1021/acsmedchemlett.8b00437](https://pubs.acs.org/doi/10.1021/acsmedchemlett.8b00437)
 
 <pre><code>
 @Article{NNP_MM_2020,

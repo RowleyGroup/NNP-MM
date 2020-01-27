@@ -113,7 +113,7 @@ keywords = {biomolecular simulation, molecular dynamics, parallel computing},
 year = {2005},
 }
 
-article{Melo2018, 
+@article{Melo2018, 
 title={NAMD goes quantum: an integrative suite for hybrid simulations},
 volume={15}, ISSN={1548-7091}, 
 number={5}, 

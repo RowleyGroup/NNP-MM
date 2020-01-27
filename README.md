@@ -5,7 +5,7 @@
 [www.rowleygroup.net](https://www.rowleygroup.net)
 
 -------------------------------------------------------------------
-The NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the TorchANI NNP python library.
+The NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the [TorchANI NNP python library](https://aiqm.github.io/torchani/) developed by the [Roitberg group](https://roitberg.chem.ufl.edu/).
 
 The ani-server.py script must be executed and continue to run in the background before NAMD is executed. This server interfaces with the TorchANI library. The ani-client.py script is executed by NAMD at each energy/gradient step, which communicates with the ani-server.py. NAMD writes the atomic coordinates to disk. The ani-client.py script polls the ani-server.py. The socket communication is performed through a file handle (/tmp/ani\_socket) To reduce the rate of these file operations, we use a local RAM to store these files, although, in practice, this does not change the speed of the simulations significantly.
 
@@ -83,3 +83,8 @@ url = "http://dx.doi.org/10.1039/C9SC06017K",
 }
 </pre></code>
 
+## References
+1. ANI-1ccX potential: Smith, J.S., Nebgen, B.T., Zubatyuk, R. et al. Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning. *Nat. Commun.*  **2019**, 10, 2903 [https://doi.org/10.1038/s41467-019-10827-4](https://doi.org/10.1038/s41467-019-10827-4)
+2. ANI-1 potential: J. S. Smith, O. Isayev, and A. E. Roitberg. ANI-1: an extensible neural net-
+work potential with DFT accuracy at force field computational cost. Chem. Sci., **2017**
+8 (4), 3192–3203, [https://doi.org/10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)

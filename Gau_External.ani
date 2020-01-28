@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+
+# script to interface Gaussian to TorchANI using the External feature
+
+#usage: in the Gaussian input file, the route card should be
+#external=path_to_this_script opt=nomicro
+
+# you must install TorchANI first (https://github.com/aiqm/torchani)
+
+from __future__ import print_function
+import torchani
+import torch
+
+import sys
+import os
+import time
+
+
+from sys import argv as sargv
+from sys import exit
+from os.path import dirname
+import subprocess as sp
+
+
+def abort(message): 
+    print("*"*80)
+    print(" TorchANI-Gaussian interfacing Error")
+    print(message)
+    print("*"*80)
+    sys.exit()                      
+
+
+print("="*80)
+start_time = time.time()
+print("EXTERNAL start: ", time.strftime("%c"))
+sys.stdout.flush() 
+
+#=============================================================================
+# Define a list that can convert between atomic number and atomic symbol since
+# Gaussian only provides the atomic number.
+#=============================================================================
+atomic_symbol= [ 'XX','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg',
+                 'Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni',
+                 'Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru',
+                 'Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Ce','Pr','Nd',
+                 'Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os',
+                 'Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac','Th','Pa','U',
+                 'Np','Pu','Am','Cm','Bk','Cf','Es','Fm','Md','No','Lr','Rf','Db','Sg','Bh',
+                 'Hs','Mt' ]
+
+infile=open(sys.argv[2], 'r')
+line = infile.readline()
+natoms = int(line.split()[0])
+
+
+charge = int(line.split()[2]) 
+spin_multiplicity = int(line.split()[3]) 
+
+atom_label=['']
+x=[0.0]
+y=[0.0]
+z=[0.0]
+
+elements=[]
+
+crd=[]
+
+# read coordinates written to disk by Gaussian
+# convert symbols to atomic number, Bohr to Angstrom
+
+
+for i in range (0, natoms):
+    line = infile.readline()
+    elements.append(atomic_symbol[int(line.split()[0])])
+    crd.append([float(line.split()[1])/1.889725372221188, float(line.split()[2])/1.889725372221188, float(line.split()[3])/1.889725372221188])
+
+infile.close()
+
+# create torch device
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# copy coordinates into tensor, send them to the GPU
+coordinates = torch.tensor([crd], requires_grad=True, device=device).cuda()
+coordinates=coordinates.to(device)
+
+# initiate TorchANI ANI model
+
+model=torchani.models.ANI1ccx()
+model=model.to(device)
+
+species = model.species_to_tensor("".join(elements)).to(device).unsqueeze(0)
+
+_, energy = model((species, coordinates))
+derivative = torch.autograd.grad(energy.sum(), coordinates)[0]
+
+d=derivative.squeeze()
+
+#=============================================================================
+# Write the energy and gradient information to the outputfile that Gaussian
+# reads.  Gaussian passes the file name it wants as the second argument to 
+# this script but with a '.EOu' suffix instead of '.EIn'.  
+#=============================================================================
+
+fname=sys.argv[2]
+fname=fname[:-3] + 'EOu'
+
+outfile=open(fname,'w')
+
+outfile.write("%20.12f%20.12f\n" % (energy, 0.0) )
+
+# output ANI forces for Gaussian - note conversion to atomic units
+for i in range(0, natoms):
+    outfile.write("%20.12f%20.12f%20.12f\n"% (d[i][0]/1.889725372221188, d[i][1]/1.889725372221188, d[i][2]/1.889725372221188) )
+    
+outfile.close
+
+print("EXTERNAL end: ", time.strftime("%c"))
+print("EXTERNAL elapsed time: %.1f %s" % (0, 's')) # (elapsed_time,t_unit))
+print("="*80)
+
+

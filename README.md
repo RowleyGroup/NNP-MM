@@ -115,14 +115,16 @@ year = {2005},
 
 @article{Melo2018, 
 title={NAMD goes quantum: an integrative suite for hybrid simulations},
-volume={15}, ISSN={1548-7091}, 
+volume={15},
+ISSN={1548-7091}, 
 number={5}, 
 journal={Nat. Methods}, 
-author={Melo, Marcelo C. R. and Bernardi, Rafael C. and Rudack, Till and Scheurer, Maximilian and Riplinger, Christoph and Phillips, James C. and Maia, Julio D. C. and Rocha, Gerd B. and Ribeiro, João V. and Stone, John E. and et al.}, year={2018}, month={May}, pages={351–354} }
+author={Melo, Marcelo C. R. and Bernardi, Rafael C. and Rudack, Till and Scheurer, Maximilian and Riplinger, Christoph and Phillips, James C. and Maia, Julio D. C. and Rocha, Gerd B. and Ribeiro, João V. and Stone, John E. and et al.},
+year={2018}, pages={351–354} 
+}
 
 @article{Smith_Isayev_Roitberg_2017,
 title={ANI-1: an extensible neural network potential with DFT accuracy at force field computational cost}, volume={8}, ISSN={2041-6520}, 
-abstractNote={Deep learning is revolutionizing many areas of science and technology, especially image, text, and speech recognition. In this paper, we demonstrate how a deep neural network (NN) trained on quantum mechanical (QM) DFT calculations can learn an accurate and transferable potential for organic molecules. We introduce ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short. ANI is a new method designed with the intent of developing transferable neural network potentials that utilize a highly-modified version of the Behler and Parrinello symmetry functions to build single-atom atomic environment vectors (AEV) as a molecular representation. AEVs provide the ability to train neural networks to data that spans both configurational and conformational space, a feat not previously accomplished on this scale. We utilized ANI to build a potential called ANI-1, which was trained on a subset of the GDB databases with up to 8 heavy atoms in order to predict total energies for organic molecules containing four atom types: H, C, N, and O. To obtain an accelerated but physically relevant sampling of molecular potential surfaces, we also proposed a Normal Mode Sampling (NMS) method for generating molecular conformations. Through a series of case studies, we show that ANI-1 is chemically accurate compared to reference DFT calculations on much larger molecular systems (up to 54 atoms) than those included in the training data set.},
 number={4},
 journal={Chem. Sci.},
 author={Smith, J. S. and Isayev, O. and Roitberg, A. E.},

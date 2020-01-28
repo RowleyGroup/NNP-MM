@@ -70,15 +70,15 @@ cellorigin 21.31 0.50 52.4
 ## Citing
 Researchers using *this* code should cite the following paper:
 
-Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, *Chemical Science*, **2020**, doi: [10.1039/C9SC06017K](https://doi.org/10.1039/C9SC06017K)
+Lahey S.-L. J., Rowley, C. N., Simulating Protein-Ligand Binding with Neural Network Potentials, *Chem. Sci.*, **2020**, doi: [10.1039/C9SC06017K](https://doi.org/10.1039/C9SC06017K)
 
 Researchers should also cite the papers describing the NNP used:
-1. ANI-1ccX potential: Smith, J.S., Nebgen, B.T., Zubatyuk, R. et al. Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning. *Nat. Commun.*  **2019**, 10, 2903 [https://doi.org/10.1038/s41467-019-10827-4](https://doi.org/10.1038/s41467-019-10827-4)
+1. ANI-1ccX potential: Smith, J.S., Nebgen, B.T., Zubatyuk, R. et al. Approaching coupled cluster accuracy with a general-purpose neural network potential through transfer learning. *Nat. Commun.*  **2019**, 10, 2903 doi: [10.1038/s41467-019-10827-4](https://doi.org/10.1038/s41467-019-10827-4)
 2. ANI-1 potential: J. S. Smith, O. Isayev, and A. E. Roitberg. ANI-1: an extensible neural net-
 work potential with DFT accuracy at force field computational cost. *Chem. Sci.*, **2017**
-8 (4), 3192–3203, [https://doi.org/10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)
+8 (4), 3192–3203, doi: [10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)
 3. Justin S. Smith, Adrian E. Roitberg, and Olexandr Isayev *ACS Medicinal Chemistry Letters* **2018** 9 (11), 1065-1069
-[DOI: 10.1021/acsmedchemlett.8b00437](https://pubs.acs.org/doi/10.1021/acsmedchemlett.8b00437)
+doi: [10.1021/acsmedchemlett.8b00437](https://pubs.acs.org/doi/10.1021/acsmedchemlett.8b00437)
 
 Researchers should also NAMD and the NAMD QM/MM interface the papers describing the NNP used:
 1. J. C. Phillips, R. Braun, W. Wang, J. Gumbart, E. Tajkhorshid, E. Villa, C. Chipot, R. D. Skeel, L. Kalé and K. Schulten, *J. Comput. Chem.*, **2005**, 26, 1781–1802.

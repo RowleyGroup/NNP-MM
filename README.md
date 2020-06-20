@@ -56,7 +56,8 @@ The examples directory of the GitHub repository contains the input files an NNP/
 
 ## Practical Notes
 ### Applicable Systems
-The ANI-1x/ANI-1ccX model should not be used for compounds with charged functional groups. Only molecules comprised of C, N, O, and H atoms are supported by the ANI-1x/ANI-1ccX models.
+The ANI-1x/ANI-1ccX model should not be used for compounds with charged functional groups. Only molecules comprised of C, N, O, and H atoms are supported by the ANI-1x/ANI-1ccX models. The ANI-2X potential can be used on molecules containing H, C, N, O, F, Cl, and S.
+
 ### Periodic Boundary Conditions
 The atoms in the NNP region must not cross the boundary of the simulation cell. The simplest way to do this is to translate the NNP system to the origin (0, 0, 0). Alternatively, the CellOrigin NAMD keyword can be used to place the center of the simulation cell at the center of mass of the NNP region. In each case, it is advisable to restrain the NNP atoms with a harmonic potential so that they do not diffuse across the boundary during the simulation.
 
@@ -77,10 +78,11 @@ Researchers should also cite the papers describing the NNP used:
 2. ANI-1 potential: J. S. Smith, O. Isayev, and A. E. Roitberg. ANI-1: an extensible neural net-
 work potential with DFT accuracy at force field computational cost. *Chem. Sci.*, **2017**
 8 (4), 3192–3203, doi: [10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)
-3. Justin S. Smith, Adrian E. Roitberg, and Olexandr Isayev *ACS Medicinal Chemistry Letters* **2018** 9 (11), 1065-1069
+3. ANI-2X potential: Christian Devereux, Justin S. Smith, Kate K Davis, Kipton Barros, Roman Zubatyuk, Olexandr Isayev, and Adrian E. Roitberg *J. Chem. Theory Comput.*  **2020**, DOI: 10.1021/acs.jctc.0c00121
+4. Justin S. Smith, Adrian E. Roitberg, and Olexandr Isayev *ACS Medicinal Chemistry Letters* **2018** 9 (11), 1065-1069
 doi: [10.1021/acsmedchemlett.8b00437](https://pubs.acs.org/doi/10.1021/acsmedchemlett.8b00437)
 
-Researchers should also NAMD and the NAMD QM/MM interface the papers describing the NNP used:
+Researchers should also NAMD and the NAMD QM/MM interface:
 1. J. C. Phillips, R. Braun, W. Wang, J. Gumbart, E. Tajkhorshid, E. Villa, C. Chipot, R. D. Skeel, L. Kalé and K. Schulten, *J. Comput. Chem.*, **2005**, 26, 1781–1802.
 2. M. C. R. Melo, R. C. Bernardi, T. Rudack, M. Scheurer, C. Riplinger, J. C. Phillips, J. D. C. Maia, G. B. Rocha, J. V.
 Ribeiro, J. E. Stone and et al., *Nat. Methods*, **2018**, 15, 351–354
@@ -96,7 +98,7 @@ doi = "10.1039/C9SC06017K",
 url = "http://dx.doi.org/10.1039/C9SC06017K",
 }
 
-@article {namd,
+@article{namd,
 author = {Phillips, James C. and Braun, Rosemary and Wang, Wei and Gumbart, James and Tajkhorshid, Emad and Villa, Elizabeth and Chipot, Christophe 
 and Skeel, Robert D. and Kal\'{e}, Laxmikant and Schulten, Klaus},
 Title = {Scalable Molecular Dynamics with NAMD},
@@ -113,6 +115,14 @@ keywords = {biomolecular simulation, molecular dynamics, parallel computing},
 year = {2005},
 }
 
+@article{ANI2X,
+author = {Devereux, Christian and Smith, Justin S. and Davis, Kate K and Barros, Kipton and Zubatyuk, Roman and Isayev, Olexandr and Roitberg, Adrian E.},
+title = {Extending the applicability of the ANI deep learning molecular potential to Sulfur and Halogens},
+journal = {J. Chem. Theory Comput.},
+year = {2020},
+doi = {10.1021/acs.jctc.0c00121},
+}
+
 @article{Melo2018, 
 title={NAMD goes quantum: an integrative suite for hybrid simulations},
 volume={15},
@@ -120,7 +130,8 @@ ISSN={1548-7091},
 number={5}, 
 journal={Nat. Methods}, 
 author={Melo, Marcelo C. R. and Bernardi, Rafael C. and Rudack, Till and Scheurer, Maximilian and Riplinger, Christoph and Phillips, James C. and Maia, Julio D. C. and Rocha, Gerd B. and Ribeiro, João V. and Stone, John E. and et al.},
-year={2018}, pages={351–354} 
+year={2018},
+pages={351–354} 
 }
 
 @article{Smith_Isayev_Roitberg_2017,

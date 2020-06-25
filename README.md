@@ -79,7 +79,11 @@ Researchers should also cite the papers describing the NNP used:
 work potential with DFT accuracy at force field computational cost. *Chem. Sci.*, **2017**
 8 (4), 3192–3203, doi: [10.1039/C6SC05720A](https://doi.org/10.1039/C6SC05720A)
 3. ANI-2X potential: Christian Devereux, Justin S. Smith, Kate K Davis, Kipton Barros, Roman Zubatyuk, Olexandr Isayev, and Adrian E. Roitberg *J. Chem. Theory Comput.*  **2020**, DOI: 10.1021/acs.jctc.0c00121
-4. Justin S. Smith, Adrian E. Roitberg, and Olexandr Isayev *ACS Medicinal Chemistry Letters* **2018** 9 (11), 1065-1069
+4.TorchANI: Xiang Gao, Farhad Ramezanghorbani, Olexandr Isayev, Justin S. Smith, and Adrian E. Roitberg
+Journal of Chemical Information, TorchANI: A Free and Open Source PyTorch Based Deep Learning Implementation of the ANI Neural Network Potentials
+Xiang Gao, Farhad Ramezanghorbani, Olexandr Isayev, Justin S. Smith, and Adrian E. Roitberg
+Journal of Chemical Information and Modeling **2020**, DOI: [10.1021/acs.jcim.0c00451](https://doi.org/10.1021/acs.jcim.0c00451)
+5. Justin S. Smith, Adrian E. Roitberg, and Olexandr Isayev *ACS Medicinal Chemistry Letters* **2018** 9 (11), 1065-1069
 doi: [10.1021/acsmedchemlett.8b00437](https://pubs.acs.org/doi/10.1021/acsmedchemlett.8b00437)
 
 Researchers should also NAMD and the NAMD QM/MM interface:
@@ -152,4 +156,20 @@ author={Smith, Justin S. and Nebgen, Benjamin T. and Zubatyuk, Roman and Lubbers
 year={2019},
 pages={2903} 
 }
+
+@article{TorchANI
+author = {Gao, Xiang and Ramezanghorbani, Farhad and Isayev, Olexandr and Smith, Justin S. and Roitberg, Adrian E.},
+title = {TorchANI: A Free and Open Source PyTorch Based Deep Learning Implementation of the ANI Neural Network Potentials},
+journal = {Journal of Chemical Information and Modeling},
+volume = {0},
+number = {ja},
+pages = {null},
+year = {0},
+doi = {10.1021/acs.jcim.0c00451},
+URL = {https://doi.org/10.1021/acs.jcim.0c00451},
+eprint =  {https://doi.org/10.1021/acs.jcim.0c00451}
+}
+
+
+
 </pre></code>
